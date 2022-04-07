@@ -1,4 +1,4 @@
-# 스프링부트 JPA 블로그 V3 - GREEN Computer
+# 스프링부트 JPA 블로그 V3 - 티스토리 블로그 클론코딩
 
 ### 1. 의존성
 - devtools
