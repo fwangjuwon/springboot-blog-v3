@@ -1,0 +1,23 @@
+.my_navbar{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid rgb(26, 26, 26);
+}
+
+.my_navbar_title{
+    color: rgb(26, 26, 26);
+    font-size: 30px;
+}
+
+.my_icon_btn{
+    border: 1px solid;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.my_icon_btn:hover{
+background-color: rgb(185,185,185);
+}
