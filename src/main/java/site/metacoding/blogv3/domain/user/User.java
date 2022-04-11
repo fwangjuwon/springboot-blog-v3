@@ -14,7 +14,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -38,7 +37,7 @@ public class User {
     @Column(length = 20, nullable = false)
     private String password;
 
-    @Column(length = 60, nullable = false)
+    @Column(length = 100, nullable = false)
     private String email;
 
     @CreatedDate // insert 할때만 동작
