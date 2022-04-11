@@ -22,8 +22,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.metacoding.blogv3.domain.user.User;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @EntityListeners(AuditingEntityListener.class) // 이 부분 추가
 @Entity
@@ -36,7 +36,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    // utf-8 (가변 인코딩: 영어 1바이트, 한글 3바이트)
+    // UTF-8 (가변 인코딩 : 영어 1Byte, 한글 3Byte)
     @Column(length = 60, nullable = false)
     private String title;
 

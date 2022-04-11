@@ -20,13 +20,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import site.metacoding.blogv3.domain.user.User;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @EntityListeners(AuditingEntityListener.class) // 이 부분 추가
 @Entity
 public class Visit {
-    // user회원가입 시 방문자 카운트 0으로 초기화해두자.
+    // User 회원가입시 방문자 카운트 0으로 초기화 해두자.
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -22,8 +22,8 @@ import lombok.NoArgsConstructor;
 import site.metacoding.blogv3.domain.category.Category;
 import site.metacoding.blogv3.domain.user.User;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @EntityListeners(AuditingEntityListener.class) // 이 부분 추가
 @Entity
