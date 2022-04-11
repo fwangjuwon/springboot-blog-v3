@@ -1,0 +1,17 @@
+.my_main_start_btn{
+    width: 140px;
+    height: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.my_main_start_btn:hover{
+    background-color: rgb(255,85,68);
+    color: white;
+    border: 1px solid white;
+}
