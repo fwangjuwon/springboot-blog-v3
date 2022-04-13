@@ -18,4 +18,8 @@
 .my_text_primary{
     color: rgb(26,26,26);
     }
+
+    .my_bg_error{
+        background-color: rgb(250,200,200);
+    }
    

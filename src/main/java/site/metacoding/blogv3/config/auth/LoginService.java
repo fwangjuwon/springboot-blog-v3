@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blogv3.domain.user.User;
 import site.metacoding.blogv3.domain.user.UserRepository;
-import site.metacoding.blogv3.handler.ex.CustomApiException;
-import site.metacoding.blogv3.handler.ex.CustomException;
 
 @RequiredArgsConstructor
 @Service // ioc container에 등록됐다! /login 호출하면 인증필터가 유저디테일서비스를 찾아서 아래 메소드를 때려준다. 그 토큰
