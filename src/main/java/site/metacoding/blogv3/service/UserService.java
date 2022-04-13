@@ -9,6 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.blogv3.domain.user.User;
 import site.metacoding.blogv3.domain.user.UserRepository;
+import site.metacoding.blogv3.handler.ex.CustomException;
+import site.metacoding.blogv3.util.email.EmailUtil;
+import site.metacoding.blogv3.web.dto.user.PasswordResetReqDto;
 
 @RequiredArgsConstructor
 @Service // IoC 등록
@@ -17,6 +20,28 @@ public class UserService {
     // DI
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final EmailUtil emailUtil;
+
+    @Transactional
+    public void 패스워드초기화(PasswordResetReqDto passwordResetReqDto){
+//1. username, email 이 같은 것이 있는지 체크 (디비)
+Optional<User> userOp = userRepository.findByUsernameAndEmail(
+passwordResetReqDto.getUsername(),
+passwordResetReqDto.getEmail()
+);
+//2. 같은것이 있다면, db password 초기화 - BCrypt 해쉬해서 update(디비)
+if(userOp.isPresent()){
+User userEntity = userOp.get(); // 영속화
+String encPassword = bCryptPasswordEncoder.encode("9999");
+userEntity.setPassword(encPassword);
+}else{
+throw new CustomException("해당 이메일이 존재하지 않습니다");
+}
+//3. 초기화된 비밀번호 이메일로 전송
+        emailUtil.sendEmail("fwangjuwon@naver.com", "비밀번호초기화", "초기화 된 비밀번호: 9999");
+}//더티체킹 (update)
+
+    
 
     @Transactional
     public void 회원가입(User user) {
